@@ -1,7 +1,7 @@
 package synthesizer;
 import java.util.Iterator;
 
-public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> implements Iterable<T> {
+public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Index for the next dequeue or peek. */
     private int first;            // index for the next dequeue or peek
     /* Index for the next enqueue. */
@@ -96,9 +96,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> implements Itera
         }
         for (int i = 0; i < this.fillCount; i++) {
             if (this.dequeue() == b.dequeue()) {
-                continue;
-            }
-            else { return false; }
+                continue; }
+            else {
+                return false; }
         }
         return true;
     }
