@@ -96,9 +96,11 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         }
         for (int i = 0; i < this.fillCount; i++) {
             if (this.dequeue() == b.dequeue()) {
-                continue; }
+                continue;
+            }
             else {
-                return false; }
+                return false;
+            }
         }
         return true;
     }
