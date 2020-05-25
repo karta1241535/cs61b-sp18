@@ -96,10 +96,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> implements Itera
         }
         for (int i = 0; i < this.fillCount; i++) {
             if (this.dequeue() == b.dequeue()) {
-                continue; }
-            else {
-                return false;
+                continue;
             }
+            else { return false; }
         }
         return true;
     }

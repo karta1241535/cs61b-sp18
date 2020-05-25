@@ -17,10 +17,6 @@ public class GuitarString {
         while (!buffer.isFull()) {
             buffer.enqueue(0.0);
         }
-        // TODO: Create a buffer with capacity = SR / frequency. You'll need to
-        //       cast the result of this divsion operation into an int. For better
-        //       accuracy, use the Math.round() function before casting.
-        //       Your buffer should be initially filled with zeros.
     }
 
 
@@ -34,10 +30,6 @@ public class GuitarString {
             double r = Math.random() - 0.5;
             buffer.enqueue(r);
         }
-        // TODO: Dequeue everything in the buffer, and replace it with random numbers
-        //       between -0.5 and 0.5. You can get such a number by using:
-        //       double r = Math.random() - 0.5;
-        //
         //       Make sure that your random numbers are different from each other.
     }
 
@@ -49,14 +41,10 @@ public class GuitarString {
         double back = buffer.peek();
         double mix = (front + back) / 2 * DECAY;
         buffer.enqueue(mix);
-        // TODO: Dequeue the front sample and enqueue a new sample that is
-        //       the average of the two multiplied by the DECAY factor.
-        //       Do not call StdAudio.play().
     }
 
     /* Return the double at the front of the buffer. */
     public double sample() {
         return buffer.peek();
-        // TODO: Return the correct thing.
     }
 }
