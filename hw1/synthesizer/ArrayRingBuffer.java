@@ -54,6 +54,9 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> implements Itera
      * Return oldest item, but don't remove it.
      */
     public T peek() {
+        if (isEmpty()) {
+            throw new RuntimeException("Ring buffer underflow");
+        }
         return rb[first];
     }
 
